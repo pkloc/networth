@@ -14,7 +14,7 @@ class AssetAmount extends React.Component {
 
   onBlur = () => {
     console.log("Blurbed!!!: " + this.state.amount);
-    this.props.onAmountChanged(this.state.amount);
+    this.props.onAmountChanged(this.state.amount, this.props.id);
   };
 
   render() {

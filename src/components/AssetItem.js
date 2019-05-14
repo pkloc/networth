@@ -2,7 +2,6 @@ import React from "react";
 import AssetAmount from "./AssetAmount";
 
 const AssetItem = props => {
-
   return (
     <tr>
       <td>{props.asset.name}</td>
@@ -11,6 +10,7 @@ const AssetItem = props => {
         <AssetAmount
           amount={props.asset.amount}
           onAmountChanged={props.onAmountChanged}
+          id={props.asset.id}
         />
       </td>
     </tr>

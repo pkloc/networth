@@ -27,8 +27,8 @@ class App extends React.Component {
     }
   };
 
-  onAmountChanged = amount => {
-    console.log("Amount changed: " + amount);
+  onAmountChanged = (amount, id) => {
+    console.log("Amount changed: " + amount + " for id: " + id);
     console.log(this.state.networth);
   };
 

@@ -12,9 +12,13 @@ class AssetAmount extends React.Component {
     this.setState({ amount: value });
   };
 
+  onBlur = () => {
+    console.log("Blurbed!!!: " + this.state.amount);
+  };
+
   render() {
     return (
-      <div>
+      <div className="ui input">
         <NumberFormat
           isNumericString={true}
           decimalScale={2}
@@ -22,6 +26,7 @@ class AssetAmount extends React.Component {
           thousandSeparator={true}
           prefix={"$"}
           onValueChange={this.onValueChange}
+          onBlur={this.onBlur}
         />
       </div>
     );

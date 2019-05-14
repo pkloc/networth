@@ -1,16 +1,10 @@
 import React from "react";
-import AssetAmount from "./AssetAmount";
+import AssetItem from "./AssetItem";
 
 const AssetList = props => {
   const rows = props.assets.map(asset => {
     return (
-      <tr>
-        <td>{asset.name}</td>
-        <td style={{ textAlign: "right" }}>{asset.irate}</td>
-        <td style={{ textAlign: "right" }}>
-          <AssetAmount amount={asset.amount} />
-        </td>
-      </tr>
+      <AssetItem key={asset.id} asset={asset} />
     );
   });
   return rows;

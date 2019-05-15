@@ -1,11 +1,11 @@
 import React from "react";
-import AssetList from "./AssetList";
+import ItemList from "./ItemList";
 
-const AssetsTable = ({
+const ItemTable = ({
   column1header,
   column2header,
   column3header,
-  assets,
+  items,
   onAmountChanged
 }) => {
   return (
@@ -24,11 +24,11 @@ const AssetsTable = ({
           </tr>
         </thead>
         <tbody>
-          <AssetList assets={assets} onAmountChanged={onAmountChanged} />
+          <ItemList items={items} onAmountChanged={onAmountChanged} />
         </tbody>
       </table>
     </div>
   );
 };
 
-export default AssetsTable;
+export default ItemTable;

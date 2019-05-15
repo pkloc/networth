@@ -1,0 +1,217 @@
+{
+  "items": [
+    {
+      "id": 0,
+      "type": "asset",
+      "term": "short",
+      "name": "Chequing",
+      "irate": "0%",
+      "amount": "2000.00"
+    },
+    {
+      "id": 1,
+      "type": "shortTerm",
+      "name": "Savings for Taxes",
+      "irate": "5%",
+      "amount": "4000.00"
+    },
+    {
+      "id": 2,
+      "type": "asset",
+      "term": "short",
+      "name": "Rainy Day Fund",
+      "irate": "0%",
+      "amount": "506.00"
+    },
+    {
+      "id": 3,
+      "type": "asset",
+      "term": "short",
+      "name": "Savings for Fun",
+      "irate": "0%",
+      "amount": "5000.00"
+    },
+    {
+      "id": 4,
+      "type": "asset",
+      "term": "short",
+      "name": "Savings for Travel",
+      "irate": "0%",
+      "amount": "400.00"
+    },
+    {
+      "id": 5,
+      "type": "asset",
+      "term": "short",
+      "name": "Savings fro Personal Development",
+      "irate": "1.50%",
+      "amount": "200.00"
+    },
+    {
+      "id": 6,
+      "type": "asset",
+      "term": "short",
+      "name": "Investment 1",
+      "irate": "2.30%",
+      "amount": "5000.00"
+    },
+    {
+      "id": 7,
+      "type": "asset",
+      "term": "short",
+      "name": "Investment 2",
+      "irate": "2%",
+      "amount": "60000.00"
+    },
+    {
+      "id": 8,
+      "type": "asset",
+      "term": "short",
+      "name": "Investment 3",
+      "irate": "5%",
+      "amount": "30000.00"
+    },
+    {
+      "id": 9,
+      "type": "asset",
+      "term": "short",
+      "name": "Investment 4",
+      "irate": "10%",
+      "amount": "50000.00"
+    },
+    {
+      "id": 10,
+      "type": "asset",
+      "term": "short",
+      "name": "Investment 5",
+      "irate": "0%",
+      "amount": "24000.00"
+    },
+    {
+      "id": 11,
+      "type": "asset",
+      "term": "long",
+      "name": "Primary Home",
+      "irate": "1%",
+      "amount": "455000"
+    },
+    {
+      "id": 12,
+      "type": "asset",
+      "term": "long",
+      "name": "Second Home",
+      "irate": "2%",
+      "amount": "1564321"
+    },
+    {
+      "id": 13,
+      "type": "asset",
+      "term": "long",
+      "name": "Other",
+      "irate": "",
+      "amount": ""
+    },
+    {
+      "id": 14,
+      "type": "liability",
+      "term": "short",
+      "name": "Credit Card 1",
+      "monthlyPayment": "200",
+      "irate": "50%",
+      "amount": "4342.00"
+    },
+    {
+      "id": 15,
+      "type": "liability",
+      "term": "short",
+      "name": "Credit Card 2",
+      "monthlyPayment": "150",
+      "irate": "22%",
+      "amount": "322.00"
+    },
+    {
+      "id": 16,
+      "type": "liability",
+      "term": "short",
+      "name": "(others...)",
+      "monthlyPayment": "",
+      "irate": "",
+      "amount": ""
+    },
+    {
+      "id": 17,
+      "type": "liability",
+      "term": "short",
+      "name": "",
+      "monthlyPayment": "",
+      "irate": "",
+      "amount": ""
+    },
+    {
+      "id": 18,
+      "type": "liability",
+      "term": "short",
+      "name": "",
+      "monthlyPayment": "",
+      "irate": "",
+      "amount": ""
+    },
+    {
+      "id": 19,
+      "type": "liability",
+      "term": "long",
+      "name": "Mortgage 1",
+      "monthlyPayment": "",
+      "irate": "",
+      "amount": ""
+    },
+    {
+      "id": 20,
+      "type": "liability",
+      "term": "long",
+      "name": "Mortgage 2",
+      "monthlyPayment": "",
+      "irate": "",
+      "amount": ""
+    },
+    {
+      "id": 21,
+      "type": "liability",
+      "term": "long",
+      "name": "Line of Credit",
+      "monthlyPayment": "",
+      "irate": "",
+      "amount": ""
+    },
+    {
+      "id": 22,
+      "type": "liability",
+      "term": "long",
+      "name": "Investment Loan",
+      "monthlyPayment": "",
+      "irate": "",
+      "amount": ""
+    },
+    {
+      "id": 23,
+      "type": "liability",
+      "term": "long",
+      "name": "Student Loan",
+      "monthlyPayment": "",
+      "irate": "",
+      "amount": ""
+    },
+    {
+      "id": 24,
+      "type": "liability",
+      "term": "long",
+      "name": "Car Loan",
+      "monthlyPayment": "",
+      "irate": "",
+      "amount": ""
+    }
+  ],
+  "totalAssets": "2200427.00",
+  "totalLiabilities": "908297.00",
+  "netWorth": "1292130.00"
+}

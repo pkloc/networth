@@ -2,7 +2,7 @@ import React from "react";
 import NumberFormat from "react-number-format";
 
 class AssetAmount extends React.Component {
-  state = { amount: this.props.amount };
+  state = { amount: this.props.asset.amount };
 
   onValueChange = values => {
     const { formattedValue, value } = values;
@@ -14,7 +14,7 @@ class AssetAmount extends React.Component {
 
   onBlur = () => {
     console.log("Blurbed!!!: " + this.state.amount);
-    this.props.onAmountChanged(this.state.amount, this.props.id);
+    this.props.onAmountChanged(this.state.amount, this.props.asset.id);
   };
 
   render() {

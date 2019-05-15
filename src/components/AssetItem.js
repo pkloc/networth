@@ -1,17 +1,16 @@
 import React from "react";
 import AssetAmount from "./AssetAmount";
 
-const AssetItem = props => {
+const AssetItem = ({ asset, onAmountChanged }) => {
   return (
     <tr>
-      <td>{props.asset.name}</td>
-      <td style={{ textAlign: "right" }}>{props.asset.irate}</td>
+      <td>{asset.name}</td>
       <td style={{ textAlign: "right" }}>
-        <AssetAmount
-          amount={props.asset.amount}
-          onAmountChanged={props.onAmountChanged}
-          id={props.asset.id}
-        />
+        {asset.monthlyPayment ? asset.monthlyPayment : ""}
+      </td>
+      <td style={{ textAlign: "right" }}>{asset.irate}</td>
+      <td style={{ textAlign: "right" }}>
+        <AssetAmount asset={asset} onAmountChanged={onAmountChanged} />
       </td>
     </tr>
   );

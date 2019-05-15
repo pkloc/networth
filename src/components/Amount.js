@@ -2,18 +2,24 @@ import React from "react";
 import NumberFormat from "react-number-format";
 
 export class Amount extends React.Component {
-  state = { amount: this.props.item.amount };
+  state = {
+    amount: this.props.item.amount,
+    changed: false
+  };
 
   onValueChange = values => {
     const { formattedValue, value } = values;
     console.log("Value: " + value);
     console.log("Formatted Value: " + formattedValue);
     this.setState({ amount: value });
+    this.setState({changed: true});
   };
 
   onBlur = () => {
-    console.log("Blurbed!!!: " + this.state.amount);
-    this.props.onAmountChanged(this.state.amount, this.props.item.id);
+    if (this.state.changed){
+      this.setState({changed: false})
+      this.props.onAmountChanged(this.state.amount, this.props.item.id);
+    }    
   };
 
   render() {

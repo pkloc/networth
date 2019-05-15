@@ -28,9 +28,10 @@ export class Amount extends React.Component {
         <NumberFormat
           isNumericString={true}
           decimalScale={2}
+          fixedDecimalScale={true}
           value={this.state.amount}
           thousandSeparator={true}
-          prefix={"$"}
+          prefix={"$ "}
           onValueChange={this.onValueChange}
           onBlur={this.onBlur}
         />

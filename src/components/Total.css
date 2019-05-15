@@ -1,0 +1,10 @@
+.total {
+  margin-top: 20px;
+  font-size: 18px;
+  font-weight: bold;
+  border-bottom: black double;
+}
+.numberFormat {
+  color: red;
+  text-align: right;
+}

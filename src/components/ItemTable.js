@@ -10,7 +10,7 @@ const ItemTable = ({
 }) => {
   return (
     <div>
-      <table className="ui basic table">
+      <table className="ui table">
         <thead>
           <tr>
             <th className="six wide">{column1header}</th>

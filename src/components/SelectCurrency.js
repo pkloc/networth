@@ -2,7 +2,7 @@ import React from "react";
 
 const SelectCurrency = () => {
   return (
-    <div className="select-currency" style={{ fontWeight: "bold" }}>
+    <div className="select-currency" align="right" style={{ fontWeight: "bold" }}>
       <span style={{ fontSize: "20px" }}>SelectCurrency:</span>
       <select
         className="ui search dropdown"

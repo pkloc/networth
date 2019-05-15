@@ -1,7 +1,8 @@
 import React from "react";
 import SelectCurrency from "./SelectCurrency";
-import "./App.css";
+import Total from "./Total";
 import ItemTable from "./ItemTable";
+import "./App.css";
 
 const data = require("../balanceSheet.json");
 
@@ -18,10 +19,15 @@ class App extends React.Component {
 
   render() {
     return (
-      <div className="ui container">
+      <div
+        className="ui container"
+        style={{ marginTop: "10px", marginBottom: "30px" }}
+      >
         <h1>Tracking your Networth</h1>
         <SelectCurrency />
-        <h3>Net Worth</h3>
+        <div style={{ borderBottom: "2px black solid" }}>
+          <Total title="Net Worth" total={this.state.balanceSheet.netWorth} />
+        </div>
 
         <h3>Assets</h3>
         <ItemTable
@@ -42,6 +48,10 @@ class App extends React.Component {
           })}
           onAmountChanged={this.onAmountChanged}
         />
+        <Total
+          title="Total Assets"
+          total={this.state.balanceSheet.totalAssets}
+        />
 
         <h3>Liabilities</h3>
         <ItemTable
@@ -61,6 +71,10 @@ class App extends React.Component {
             return item.type.match("liability") && item.term.match("long");
           })}
           onAmountChanged={this.onAmountChanged}
+        />
+        <Total
+          title="Total Liabilities"
+          total={this.state.balanceSheet.totalLiabilities}
         />
       </div>
     );

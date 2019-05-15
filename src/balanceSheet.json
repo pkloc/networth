@@ -161,36 +161,36 @@
       "type": "liability",
       "term": "long",
       "name": "Mortgage 1",
-      "monthlyPayment": "",
-      "irate": "",
-      "amount": ""
+      "monthlyPayment": "2000.00",
+      "irate": "2.60%",
+      "amount": "250999.00"
     },
     {
       "id": 20,
       "type": "liability",
       "term": "long",
       "name": "Mortgage 2",
-      "monthlyPayment": "",
-      "irate": "",
-      "amount": ""
+      "monthlyPayment": "3500.00",
+      "irate": "5.40%",
+      "amount": "632634.00"
     },
     {
       "id": 21,
       "type": "liability",
       "term": "long",
       "name": "Line of Credit",
-      "monthlyPayment": "",
-      "irate": "",
-      "amount": ""
+      "monthlyPayment": "500.00",
+      "irate": "5%",
+      "amount": "10000.00"
     },
     {
       "id": 22,
       "type": "liability",
       "term": "long",
       "name": "Investment Loan",
-      "monthlyPayment": "",
-      "irate": "",
-      "amount": ""
+      "monthlyPayment": "700.00",
+      "irate": "6%",
+      "amount": "10000.00"
     },
     {
       "id": 23,
@@ -206,6 +206,15 @@
       "type": "liability",
       "term": "long",
       "name": "Car Loan",
+      "monthlyPayment": "",
+      "irate": "",
+      "amount": ""
+    },
+    {
+      "id": 25,
+      "type": "liability",
+      "term": "long",
+      "name": "",
       "monthlyPayment": "",
       "irate": "",
       "amount": ""

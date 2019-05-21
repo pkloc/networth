@@ -2,6 +2,8 @@ import React from "react";
 import SelectCurrency from "./SelectCurrency";
 import Total from "./Total";
 import ItemTable from "./ItemTable";
+import networthcalc from "../api/networthcalc";
+
 import "./App.css";
 
 const data = require("../balanceSheet.json");
@@ -11,10 +13,16 @@ class App extends React.Component {
     balanceSheet: data
   };
 
-  onAmountChanged = (amount, id) => {
-    console.log("Amount changed: " + amount + " for id: " + id);
-    //this.setState();
-    console.log(this.state.balanceSheet);
+  onAmountChanged = async (amount, id) => {
+    var cloneBalanceSheet = JSON.parse(JSON.stringify(this.state)).balanceSheet;
+    cloneBalanceSheet.items[id].amount = amount;
+
+    const response = await networthcalc.post(
+      "http://localhost:4567/data",
+      cloneBalanceSheet
+    );
+
+    console.log(response);
   };
 
   render() {

@@ -22,8 +22,12 @@ class App extends React.Component {
       cloneBalanceSheet
     );
 
-    console.log(response);
+    this.setState({ balanceSheet: response.data });
   };
+
+  onCurrencySelect = currency => {
+    console.log("Chosen currency:" + currency);
+  }
 
   render() {
     return (
@@ -32,7 +36,7 @@ class App extends React.Component {
         style={{ marginTop: "10px", marginBottom: "30px" }}
       >
         <h1>Tracking your Networth</h1>
-        <SelectCurrency />
+        <SelectCurrency onCurrencySelect={this.onCurrencySelect} />
         <div style={{ borderBottom: "2px black solid" }}>
           <Total title="Net Worth" total={this.state.balanceSheet.netWorth} />
         </div>

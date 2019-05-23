@@ -1,8 +1,9 @@
 import React from "react";
 import NumberFormat from "react-number-format";
 import "./Total.css";
+import CurrencyHelper from "../currency/helpers";
 
-const Total = ({ title, total }) => {
+const Total = ({ title, total, currency }) => {
   return (
     <div className="total">
       <div className="ui grid">
@@ -17,7 +18,10 @@ const Total = ({ title, total }) => {
               displayType="text"
               value={total}
               thousandSeparator={true}
-              prefix={"$ "}
+              thousandsGroupStyle={CurrencyHelper.getThousandGroupStyle(
+                currency
+              )}
+              prefix={CurrencyHelper.getPrefix(currency)}
             />
           </div>
         </div>

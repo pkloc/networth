@@ -25,13 +25,13 @@ class App extends React.Component {
       this.state.balanceSheet
     );
     this.setState({ balanceSheet: response.data });
-  }
+  };
 
   onCurrencySelect = currency => {
     var cloneBalanceSheet = JSON.parse(JSON.stringify(this.state)).balanceSheet;
     cloneBalanceSheet.newCurrency = currency;
-    this.setState({balanceSheet: cloneBalanceSheet});
-  }
+    this.setState({ balanceSheet: cloneBalanceSheet });
+  };
 
   render() {
     return (
@@ -42,7 +42,11 @@ class App extends React.Component {
         <h1>Tracking your Networth</h1>
         <SelectCurrency onCurrencySelect={this.onCurrencySelect} />
         <div style={{ borderBottom: "2px black solid" }}>
-          <Total title="Net Worth" total={this.state.balanceSheet.netWorth} />
+          <Total
+            title="Net Worth"
+            total={this.state.balanceSheet.netWorth}
+            currency={this.state.balanceSheet.currentCurrency}
+          />
         </div>
 
         <h3>Assets</h3>
@@ -55,6 +59,7 @@ class App extends React.Component {
           })}
           onAmountChanged={this.onAmountChanged}
           onAmountSubmitted={this.onAmountSubmitted}
+          currency={this.state.balanceSheet.currentCurrency}
         />
         <ItemTable
           column1header="Long Term Assets"
@@ -64,10 +69,13 @@ class App extends React.Component {
             return item.type.match("asset") && item.term.match("long");
           })}
           onAmountChanged={this.onAmountChanged}
+          onAmountSubmitted={this.onAmountSubmitted}
+          currency={this.state.balanceSheet.currentCurrency}
         />
         <Total
           title="Total Assets"
           total={this.state.balanceSheet.totalAssets}
+          currency={this.state.balanceSheet.currentCurrency}
         />
 
         <h3>Liabilities</h3>
@@ -79,6 +87,8 @@ class App extends React.Component {
             return item.type.match("liability") && item.term.match("short");
           })}
           onAmountChanged={this.onAmountChanged}
+          onAmountSubmitted={this.onAmountSubmitted}
+          currency={this.state.balanceSheet.currentCurrency}
         />
         <ItemTable
           column1header="Long Term Debt"
@@ -88,10 +98,13 @@ class App extends React.Component {
             return item.type.match("liability") && item.term.match("long");
           })}
           onAmountChanged={this.onAmountChanged}
+          onAmountSubmitted={this.onAmountSubmitted}
+          currency={this.state.balanceSheet.currentCurrency}
         />
         <Total
           title="Total Liabilities"
           total={this.state.balanceSheet.totalLiabilities}
+          currency={this.state.balanceSheet.currentCurrency}
         />
       </div>
     );

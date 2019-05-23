@@ -1,5 +1,6 @@
 import React from "react";
 import NumberFormat from "react-number-format";
+import CurrencyHelper from "../currency/helpers";
 
 export class Amount extends React.Component {
   state = {
@@ -7,15 +8,15 @@ export class Amount extends React.Component {
   };
 
   onValueChange = values => {
-    const { value } = values;    
-    this.setState({changed: true});
+    const { value } = values;
+    this.setState({ changed: true });
     this.props.onAmountChanged(value, this.props.item.id);
   };
 
   onBlur = () => {
-    if (this.state.changed){
-      this.setState({changed: false})
-      this.props.onAmountSubmitted()
+    if (this.state.changed) {
+      this.setState({ changed: false });
+      this.props.onAmountSubmitted();
     }
   };
 
@@ -28,7 +29,10 @@ export class Amount extends React.Component {
           fixedDecimalScale={true}
           value={this.props.item.amount}
           thousandSeparator={true}
-          prefix={"$ "}
+          thousandsGroupStyle={CurrencyHelper.getThousandGroupStyle(
+            this.props.currency
+          )}
+          prefix={CurrencyHelper.getPrefix(this.props.currency)}
           onValueChange={this.onValueChange}
           onBlur={this.onBlur}
         />

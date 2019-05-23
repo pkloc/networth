@@ -6,7 +6,8 @@ const ItemTable = ({
   column2header,
   column3header,
   items,
-  onAmountChanged
+  onAmountChanged,
+  onAmountSubmitted
 }) => {
   return (
     <div>
@@ -24,7 +25,7 @@ const ItemTable = ({
           </tr>
         </thead>
         <tbody>
-          <ItemList items={items} onAmountChanged={onAmountChanged} />
+          <ItemList items={items} onAmountChanged={onAmountChanged} onAmountSubmitted={onAmountSubmitted} />
         </tbody>
       </table>
     </div>

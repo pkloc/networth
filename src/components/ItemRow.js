@@ -1,7 +1,7 @@
 import React from "react";
 import Amount from "./Amount";
 
-const ItemRow = ({ item, onAmountChanged }) => {
+const ItemRow = ({ item, onAmountChanged, onAmountSubmitted }) => {
   return (
     <tr>
       <td>{item.name}</td>
@@ -10,7 +10,7 @@ const ItemRow = ({ item, onAmountChanged }) => {
       </td>
       <td style={{ textAlign: "right" }}>{item.irate}</td>
       <td style={{ textAlign: "right" }}>
-        <Amount item={item} onAmountChanged={onAmountChanged} />
+        <Amount item={item} onAmountChanged={onAmountChanged} onAmountSubmitted={onAmountSubmitted} />
       </td>
     </tr>
   );

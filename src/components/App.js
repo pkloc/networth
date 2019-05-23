@@ -13,20 +13,24 @@ class App extends React.Component {
     balanceSheet: data
   };
 
-  onAmountChanged = async (amount, id) => {
+  onAmountChanged = (amount, id) => {
     var cloneBalanceSheet = JSON.parse(JSON.stringify(this.state)).balanceSheet;
     cloneBalanceSheet.items[id].amount = amount;
-
-    const response = await networthcalc.post(
-      "http://localhost:4567/data",
-      cloneBalanceSheet
-    );
-
-    this.setState({ balanceSheet: response.data });
+    this.setState({ balanceSheet: cloneBalanceSheet });
   };
 
+  onAmountSubmitted = async () => {
+    const response = await networthcalc.post(
+      "http://localhost:4567/data",
+      this.state.balanceSheet
+    );
+    this.setState({ balanceSheet: response.data });
+  }
+
   onCurrencySelect = currency => {
-    console.log("Chosen currency:" + currency);
+    var cloneBalanceSheet = JSON.parse(JSON.stringify(this.state)).balanceSheet;
+    cloneBalanceSheet.newCurrency = currency;
+    this.setState({balanceSheet: cloneBalanceSheet});
   }
 
   render() {
@@ -50,6 +54,7 @@ class App extends React.Component {
             return item.type.match("asset") && item.term.match("short");
           })}
           onAmountChanged={this.onAmountChanged}
+          onAmountSubmitted={this.onAmountSubmitted}
         />
         <ItemTable
           column1header="Long Term Assets"

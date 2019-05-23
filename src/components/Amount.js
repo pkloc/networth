@@ -3,23 +3,20 @@ import NumberFormat from "react-number-format";
 
 export class Amount extends React.Component {
   state = {
-    amount: this.props.item.amount,
     changed: false
   };
 
   onValueChange = values => {
-    const { formattedValue, value } = values;
-    console.log("Value: " + value);
-    console.log("Formatted Value: " + formattedValue);
-    this.setState({ amount: value });
+    const { value } = values;    
     this.setState({changed: true});
+    this.props.onAmountChanged(value, this.props.item.id);
   };
 
   onBlur = () => {
     if (this.state.changed){
       this.setState({changed: false})
-      this.props.onAmountChanged(this.state.amount, this.props.item.id);
-    }    
+      this.props.onAmountSubmitted()
+    }
   };
 
   render() {
@@ -29,7 +26,7 @@ export class Amount extends React.Component {
           isNumericString={true}
           decimalScale={2}
           fixedDecimalScale={true}
-          value={this.state.amount}
+          value={this.props.item.amount}
           thousandSeparator={true}
           prefix={"$ "}
           onValueChange={this.onValueChange}
